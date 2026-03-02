@@ -1,0 +1,16 @@
+public class Kata {
+    public static String reverseWords(final String original) {
+        // Divide a string mantendo todos os espaços (incluindo múltiplos)
+        String[] words = original.split(" ", -1);
+        
+        // Reverte cada palavra (elementos não vazios)
+        for (int i = 0; i < words.length; i++) {
+            if (!words[i].isEmpty()) {
+                words[i] = new StringBuilder(words[i]).reverse().toString();
+            }
+        }
+        
+        // Junta os elementos com um espaço entre eles
+        return String.join(" ", words);
+    }
+}
