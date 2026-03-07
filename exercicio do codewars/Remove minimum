@@ -1,0 +1,37 @@
+public class Remover {
+    public static int[] removeSmallest(int[] numbers) {
+        // Caso o array seja vazio, retorna um array vazio
+        if (numbers.length == 0) {
+            return new int[0];
+        }
+        
+        // 1. Encontra o menor valor
+        int menor = Integer.MAX_VALUE;
+        for (int num : numbers) {
+            if (num < menor) {
+                menor = num;
+            }
+        }
+        
+        // 2. Encontra o índice da primeira ocorrência do menor valor
+        int indiceRemover = -1;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == menor) {
+                indiceRemover = i;
+                break;
+            }
+        }
+        
+        // 3. Cria um novo array com tamanho reduzido
+        int[] resultado = new int[numbers.length - 1];
+        // 4. Copia os elementos, pulando o índice a ser removido
+        int j = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (i != indiceRemover) {
+                resultado[j] = numbers[i];
+                j++;
+            }
+        }
+        return resultado;
+    }
+}
