@@ -1,0 +1,7 @@
+public class Sid {
+    public static String howMuchILoveYou(int nb_petals) {
+    int indice = (nb_petals - 1 ) % 6;
+    String[] frases = {"I love you", "a little", "a lot", "passionately", "madly", "not at all"};
+    return frases[indice];
+    }
+}
