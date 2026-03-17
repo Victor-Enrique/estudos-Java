@@ -1,0 +1,10 @@
+public class Cockroach {
+    public int cockroachSpeed(double x) {
+        if (x < 0) {
+            return 0;
+        }
+        // Math.floor garante arredondamento para baixo
+        double speedInCmPerSecond = (x * 100000) / 3600;
+        return (int) Math.floor(speedInCmPerSecond);
+    }
+}
