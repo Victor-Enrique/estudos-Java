@@ -1,0 +1,27 @@
+import java.util.Arrays;
+import java.util.Collections;
+
+public class DescendingOrder {
+    public static int sortDesc(final int num) {
+        // Converte para string
+        String numStr = Integer.toString(num);
+        
+        // Converte para array de caracteres
+        Character[] digits = new Character[numStr.length()];
+        for (int i = 0; i < numStr.length(); i++) {
+            digits[i] = numStr.charAt(i);
+        }
+        
+        // Ordena em ordem decrescente
+        Arrays.sort(digits, Collections.reverseOrder());
+        
+        // Constrói a string ordenada
+        StringBuilder sortedStr = new StringBuilder();
+        for (char c : digits) {
+            sortedStr.append(c);
+        }
+        
+        // Converte para inteiro e retorna
+        return Integer.parseInt(sortedStr.toString());
+    }
+}
